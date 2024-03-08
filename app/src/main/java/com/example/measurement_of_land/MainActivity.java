@@ -12,8 +12,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     EditText e1, e2, e3;
-    Button btnArea;
-    TextView tvArea, myDetails;
+    Button btnArea, btnShotok;
+    TextView tvArea, tvShotok, myDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,26 @@ public class MainActivity extends AppCompatActivity {
         e3 = findViewById(R.id.editText3);
 
         tvArea = findViewById(R.id.showArea);
+        tvShotok = findViewById(R.id.tvShotok);
+
 
         btnArea = findViewById(R.id.calculateArea);
+        btnShotok = findViewById(R.id.calculateShotok);
+
 
         myDetails = findViewById(R.id.myDetails);
+
+
+        //calculation
+
+        String input1 = e1.getText().toString();
+        String input2 = e2.getText().toString();
+        String input3 = e3.getText().toString();
+
+
+
+
+
 
         // Click event
         btnArea.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +76,45 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+
+        //calculate Shotok
+        btnShotok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                String input1 = e1.getText().toString();
+                String input2 = e2.getText().toString();
+                String input3 = e3.getText().toString();
+
+                try {
+                    double a = Float.parseFloat(input1);
+                    double b = Float.parseFloat(input2);
+                    double c = Float.parseFloat(input3);
+
+                    double s = (a + b + c)/2;
+
+                    double area_of_triangle = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+                    double shotok = area_of_triangle/435.6;
+
+                    String formattedArea = String.format("%.5f", shotok);
+
+
+                    // Display the result in the TextView
+                    tvShotok.setText(String.valueOf(formattedArea));
+                } catch (NumberFormatException e) {
+                    // Handle the case where the input is not a valid floating-point number
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+
 
 
         myDetails.setOnClickListener(new View.OnClickListener() {

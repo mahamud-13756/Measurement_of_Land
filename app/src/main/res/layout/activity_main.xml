@@ -17,7 +17,7 @@
         android:textSize="25sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,8 +38,8 @@
         android:textColorHint="@color/white"
         android:cursorVisible="true"
         android:textCursorDrawable="@drawable/cursor_color"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:inputType="numberDecimal"
         android:padding="10dp"
         />
@@ -57,8 +57,8 @@
         android:textColorHint="@color/white"
         android:cursorVisible="true"
         android:textCursorDrawable="@drawable/cursor_color"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:inputType="numberDecimal"
         android:padding="10dp"
         />
@@ -76,8 +76,8 @@
         android:textColor="@color/white"
         android:cursorVisible="true"
         android:textCursorDrawable="@drawable/cursor_color"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:inputType="numberDecimal"
         android:padding="10dp"
         />
@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         >
 
@@ -114,17 +114,73 @@
     </LinearLayout>
 
 
-
-
-    <Button
-        android:id="@+id/calculateArea"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="ত্রিভুজের ক্ষেত্রফল"
-        android:textSize="30sp">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        >
 
-    </Button>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="শতক : "
+            android:textColor="#ED1111"
+            android:textSize="30dp"
+
+
+            />
+
+        <TextView
+            android:id="@+id/tvShotok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#ED1111"
+            android:textSize="30dp"
+
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/calculateShotok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="শতক"
+            android:textSize="25sp">
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/calculateArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="ত্রিভুজের ক্ষেত্রফল"
+            android:textSize="25sp">
+
+        </Button>
+
+
+    </LinearLayout>
+
+
+
 
     <TextView
         android:id="@+id/myDetails"
