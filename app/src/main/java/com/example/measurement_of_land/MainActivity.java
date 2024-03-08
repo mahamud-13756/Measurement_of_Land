@@ -2,6 +2,7 @@ package com.example.measurement_of_land;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText e1, e2, e3;
     Button btnArea;
-    TextView tvArea;
+    TextView tvArea, myDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         tvArea = findViewById(R.id.showArea);
 
         btnArea = findViewById(R.id.calculateArea);
+
+        myDetails = findViewById(R.id.myDetails);
 
         // Click event
         btnArea.setOnClickListener(new View.OnClickListener() {
@@ -57,5 +60,33 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        myDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDetailsPage();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
     }
+
+
+
+    public void myDetailsPage() {
+        // Create an Intent to open the NewActivity
+        Intent intent = new Intent(this, MyDetailsActivity.class);
+        startActivity(intent);
+    }
+
 }
