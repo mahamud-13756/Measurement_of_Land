@@ -4,22 +4,40 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Home_page extends AppCompatActivity {
-    RelativeLayout triangle;
+    RelativeLayout goTriangleCalculationPage, goShotokCalculationPage,rectangleCalculationPage,polygonCalculationPage;
+    //EditText shotokCalPage;
+
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page); // Make sure you have a corresponding home_page.xml layout file
 
-        triangle = findViewById(R.id.tri);
+        goShotokCalculationPage = findViewById(R.id.shotoCal);
+        goTriangleCalculationPage = findViewById(R.id.tri);
 
-        triangle.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+        goShotokCalculationPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home_page.this, ShotokCalculator.class));
+            }
+        });
+
+
+        goTriangleCalculationPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home_page.this, MainActivity.class));

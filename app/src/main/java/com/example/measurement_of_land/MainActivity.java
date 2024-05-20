@@ -12,8 +12,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     EditText e1, e2, e3;
-    Button btnArea, btnShotok;
+    Button btnArea, btnShotok, clearFieldsButton;
     TextView tvArea, tvShotok, myDetails;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnArea = findViewById(R.id.calculateArea);
         btnShotok = findViewById(R.id.calculateShotok);
+
+        clearFieldsButton = findViewById(R.id.clearFields);
 
 
         myDetails = findViewById(R.id.myDetails);
@@ -112,6 +116,27 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+        // Clear button operation
+        clearFieldsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText("");
+                e2.setText("");
+                e3.setText("");
             }
         });
 
