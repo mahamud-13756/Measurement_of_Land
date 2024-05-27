@@ -47,6 +47,7 @@ public class ShotokCalculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get user input from UI and store local variable.
+                //calAreaToShotok();
                 String inputArea = etST1.getText().toString();
 
 
@@ -58,6 +59,7 @@ public class ShotokCalculator extends AppCompatActivity {
                     String ShotokArea = String.format("%.5f", store);
 
 
+
                     // Display the result in the TextView
                     showAreaInShotok.setText(String.valueOf(ShotokArea));
                 } catch (NumberFormatException e) {
@@ -66,6 +68,8 @@ public class ShotokCalculator extends AppCompatActivity {
                 }
             }
         });
+
+
 
 
 
@@ -119,4 +123,7 @@ public class ShotokCalculator extends AppCompatActivity {
 
 
     }
+
+
+
 }
